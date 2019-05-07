@@ -75,7 +75,7 @@ class VideoProcessor:
             f.close()
         else:
             fourcc = cv2.VideoWriter_fourcc(*'XVID')
-            out = cv2.VideoWriter(vid_out_path, fourcc, self.fps, (self.h, self.w))
+            out = cv2.VideoWriter(vid_out_path, fourcc, self.fps, (self.w, self.h))
 
             for frame in self.vid_arr:
                 if self.mode == 'RGB':
