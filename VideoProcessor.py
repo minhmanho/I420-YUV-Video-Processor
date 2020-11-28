@@ -56,10 +56,7 @@ class VideoProcessor:
             return ret, frame
 
     def save_vid(self, vid_out_path):
-        '''
-        WARning that this function write by OpenCV which use BGR format.
-        '''
-        assert self.read_once, "VideoProcesser read_once must be True to save video"
+        assert self.vid_arr != [], " VideoProcessor.vid_arr is empty"
         if self.is_yuv:
             print('YUV writer')
             f = open(vid_out_path, 'wb')
